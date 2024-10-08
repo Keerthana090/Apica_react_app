@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: apica-react-app
-        image: apica-react-app-image:latest
+        image: keerthanadoc01/apica-react-app:latest  # Use the fully qualified image name
         ports:
         - containerPort: 3000
 ---
@@ -29,5 +29,6 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 3000
-  type: LoadBalancer
+      nodePort: 30080  
+  type: NodePort
 
